@@ -1,0 +1,36 @@
+<form [formGroup]="receiptForm" (ngSubmit)="saveReceipt()">
+    <div class="form-group">
+        <label for="customer">Customer:</label>
+        <select (change)="onSelectChange($event)">
+            <option value="default">Select an option</option>
+            <option value="newCustomer">New Customer</option>
+            <option *ngFor="let customer of customers" [value]="customer.name">{{ customer.name }}</option>
+        </select>
+        <div *ngIf="flagnew">
+            <input type="text" placeholder="Enter New Customer Name" (input)="updateNewCustomerName($event)">
+            <input type="number" placeholder="Enter New Customer number" (input)="updateNewCustomerNum($event)">
+            <input type="button" (click)="saveCustomer()" value="Save Customer">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" formControlName="date">
+    </div>
+    <div class="form-group">
+        <label for="paymentMethod">Payment Method:</label>
+        <select formControlName="paymentMethods">
+            <option value="credit-card">אשראי</option>
+            <option value="cash">מזומן</option>
+            <option value="check">צק</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="amount">Amount:</label>
+        <input type="number" formControlName="amount">
+    </div>
+    <div class="form-group">
+        <label for="details">Details:</label>
+        <textarea formControlName="details"></textarea>
+    </div>
+    <button type="submit">Save</button>
+</form>

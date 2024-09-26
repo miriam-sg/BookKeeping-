@@ -1,0 +1,31 @@
+
+<form [formGroup]="expenseForm" (ngSubmit)="saveExpenses()">
+    <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" formControlName="date">
+    </div>
+  
+    <div class="form-group">
+        <label for="paymentMethod">Payment Method:</label>
+        <select formControlName="paymentMethods">  
+            <option value="credit-card">אשראי</option>
+            <option value="cash">מזומן</option>
+            <option value="check">צק</option>
+        </select>
+    </div>
+  
+    <div class="form-group">
+        <label for="amount">Amount:</label>
+        <input type="number" formControlName="amount">
+    </div>
+    <div class="form-group">
+        <label for="provider">Provider</label>
+        <input type="text" formControlName="provider">
+    </div>
+    <div class="form-group">
+        <label for="details">Details:</label>
+        <textarea formControlName="details"></textarea>
+    </div>
+  
+    <button type="submit">Save</button>
+</form>

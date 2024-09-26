@@ -1,0 +1,52 @@
+<div id="all">
+    <input type="button" value="הכנסות" (click)="flagRevenue = true; flagExpense = false" class="header">
+    <input type="button" value="הוצאות" (click)="flagExpense = true; flagRevenue = false" class="header">
+
+    <div *ngIf="flagExpense || flagRevenue">
+        <input type="button" value="לפי שנה" (click)="flagYear = true">
+        <div *ngIf="flagYear">
+            <input type="number" placeholder="הקש שנה" (change)="value = $event">
+            <input type="submit" (click)="getByYear()">
+        </div>
+        <input type="button" value="לפי חודש" (click)="flagMonth = true">
+        <div *ngIf="flagMonth">
+            <input type="number" placeholder="הקש חודש" (change)="value = $event">
+            <input type="submit" (click)="getByMonth()">
+        </div>
+        <input type="button" value="בין טווח תאריכים" (click)="flag2date = true">
+        <div *ngIf="flag2date">
+            <input type="date" (change)="startDate = $event">
+            <input type="date" (change)="endDate = $event">
+            <input type="submit" (click)="getBy2date()">
+        </div>
+    </div>
+    <div *ngIf="flagRevenue">
+        <input type="button" value="לפי לקוח" (click)="flagcust=true">
+        <select (click)="getByCust($event)" *ngIf="flagcust">
+            <option value="default">Select an option</option>
+            <option *ngFor="let customer of customers" [value]="customer.name">{{ customer.name }}</option>
+        </select>
+    </div>
+
+    <div *ngIf="this.flagDisplay">
+        <div *ngIf="flagExpense">
+            <div *ngFor="let e of this.expense.expense">
+                <div>amount:{{e.amount}}</div>
+                <div>date:{{e.date}}</div>
+                <div>details:{{e.details}}</div>
+                <div>paymentMethods:{{e.paymentMethods}}</div>
+                <div>provider:{{e.provider}}</div>
+            </div>
+        </div>
+
+        <div *ngIf="flagRevenue">
+            <div *ngFor="let e of this.revenue.Revenue">
+                <div>amount:{{e.amount}}</div>
+                <div>date:{{e.date}}</div>
+                <div>details:{{e.details}}</div>
+                <div>paymentMethods:{{e.paymentMethods}}</div>
+                <div>customer:{{e.name}}</div>
+            </div>
+        </div>
+    </div>
+</div>
