@@ -1,30 +1,38 @@
-<div id="all">
+ <div dir="rtl" >
+ <div id="all">
+    <br>
+    <div class="botton-header">
     <input type="button" value="הכנסות" (click)="flagRevenue = true; flagExpense = false" class="header">
     <input type="button" value="הוצאות" (click)="flagExpense = true; flagRevenue = false" class="header">
+</div>
+</div>
 
-    <div *ngIf="flagExpense || flagRevenue">
-        <input type="button" value="לפי שנה" (click)="flagYear = true">
+    <div *ngIf="flagExpense || flagRevenue" class="receipt-form">
+        <input type="button" value="לפי שנה" (click)="flagYear = true" class="receipt-form">
         <div *ngIf="flagYear">
-            <input type="number" placeholder="הקש שנה" (change)="value = $event">
+            <input type="number" placeholder="הקש שנה" (change)="value = $event" class="receipt-form">
             <input type="submit" (click)="getByYear()">
         </div>
-        <input type="button" value="לפי חודש" (click)="flagMonth = true">
+        <br>
+        <input type="button" value="לפי חודש" (click)="flagMonth = true" class="receipt-form">
         <div *ngIf="flagMonth">
-            <input type="number" placeholder="הקש חודש" (change)="value = $event">
+            <input type="number" placeholder="הקש חודש" (change)="value = $event" class="receipt-form">
             <input type="submit" (click)="getByMonth()">
         </div>
-        <input type="button" value="בין טווח תאריכים" (click)="flag2date = true">
+        <br>
+        <input type="button" value="בין טווח תאריכים" (click)="flag2date = true" class="receipt-form">
         <div *ngIf="flag2date">
             <input type="date" (change)="startDate = $event">
             <input type="date" (change)="endDate = $event">
             <input type="submit" (click)="getBy2date()">
         </div>
+      
     </div>
-    <div *ngIf="flagRevenue">
-        <input type="button" value="לפי לקוח" (click)="flagcust=true">
-        <select (click)="getByCust($event)" *ngIf="flagcust">
-            <option value="default">Select an option</option>
-            <option *ngFor="let customer of customers" [value]="customer.name">{{ customer.name }}</option>
+    <div *ngIf="flagRevenue" class="receipt-form">
+        <input type="button" value="לפי לקוח" (click)="flagcust=true"  class="receipt-form">
+        <select (click)="getByCust($event)" *ngIf="flagcust" class="receipt-form" >
+            <option value="default">  בחר אחת מהאפשרויות</option >
+            <option *ngFor="let customer of customers" [value]="customer.name" class="receipt-form">{{ customer.name }}</option>
         </select>
     </div>
 

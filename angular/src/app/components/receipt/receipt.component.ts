@@ -5,12 +5,15 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { DataService } from '../../services/data-service.service';
 import { response } from 'express';
 import { error } from 'console';
+import { InputGroupModule } from 'primeng/inputgroup';
+import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
+import { InputTextModule } from 'primeng/inputtext';
 
 @Component({
   selector: 'app-receipt',
   providers: [FormsModule, DataService],
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule,FormsModule, InputGroupModule, InputGroupAddonModule, InputTextModule],
   templateUrl: './receipt.component.html',
   styleUrl: './receipt.component.scss'
 })

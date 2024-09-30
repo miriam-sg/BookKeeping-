@@ -1,36 +1,40 @@
-<form [formGroup]="receiptForm" (ngSubmit)="saveReceipt()">
+<div dir="rtl" >
+<form [formGroup]="receiptForm" (ngSubmit)="saveReceipt()"  class="receipt-form">
+    
     <div class="form-group">
-        <label for="customer">Customer:</label>
-        <select (change)="onSelectChange($event)">
-            <option value="default">Select an option</option>
-            <option value="newCustomer">New Customer</option>
+        <br>
+       
+        <select (change)="onSelectChange($event)" class="select-customer">
+            <option value=""> בחר  לקוח </option>
+            <option value="newCustomer"> לקוח חדש</option>
             <option *ngFor="let customer of customers" [value]="customer.name">{{ customer.name }}</option>
         </select>
-        <div *ngIf="flagnew">
-            <input type="text" placeholder="Enter New Customer Name" (input)="updateNewCustomerName($event)">
-            <input type="number" placeholder="Enter New Customer number" (input)="updateNewCustomerNum($event)">
-            <input type="button" (click)="saveCustomer()" value="Save Customer">
+        <div *ngIf="flagnew" class="new-customer-section">
+            <input type="text" placeholder=" שם לקוח חדש  " (input)="updateNewCustomerName($event)">
+            <input type="number" placeholder="   הזן מספר לקוח חדש" (input)="updateNewCustomerNum($event)">
+            <input type="button" (click)="saveCustomer()" value=" שמור לקוח">
         </div>
     </div>
     <div class="form-group">
-        <label for="date">Date:</label>
-        <input type="date" formControlName="date">
+        <!-- <label for="date">תאריך:</label> -->
+        <input type="date" formControlName="date" class="input-date">
     </div>
     <div class="form-group">
-        <label for="paymentMethod">Payment Method:</label>
-        <select formControlName="paymentMethods">
+      
+        <select formControlName="paymentMethods" class="input-date">
+            <option value="" disabled selected hidden>בחר  אמצעי תשלום</option>
             <option value="credit-card">אשראי</option>
             <option value="cash">מזומן</option>
             <option value="check">צק</option>
         </select>
     </div>
     <div class="form-group">
-        <label for="amount">Amount:</label>
-        <input type="number" formControlName="amount">
+        <input type="number" placeholder="סכום" formControlName="newCustomerNum" class="new-customer-number">
     </div>
     <div class="form-group">
-        <label for="details">Details:</label>
-        <textarea formControlName="details"></textarea>
+       
     </div>
-    <button type="submit">Save</button>
+    <button type="submit" onclick="showSuccessMessage()" class="submit-btn">שמירה</button>
+    <div id="successMessage" class="success-message">הנתונים נשמרו בהצלחה</div>
 </form>
+</div>

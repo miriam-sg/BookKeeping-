@@ -1,4 +1,148 @@
-.form-group {
-    margin-bottom: 20px;
-    /* Adjust the spacing as needed */
-}
+.receipt-form {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .select-customer,
+  .select-payment-method,
+  .input-date,
+  .new-customer-number {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .new-customer-section {
+    display: none;
+  }
+  
+  .new-customer-name,
+  .save-customer-btn {
+    margin-top: 10px;
+  }
+  
+  .textarea-details {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .submit-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .success-message {
+    display: none;
+    color: green;
+    margin-top: 10px;
+  }
+  .receipt-form {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50%; /* Set the form width */
+    margin: 0 auto; /* Center the form horizontally */
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .select-customer,
+  .select-payment-method,
+  .input-date,
+  .new-customer-number {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .new-customer-section {
+    display: none;
+  }
+  
+  .new-customer-name,
+  .save-customer-btn {
+    margin-top: 10px;
+  }
+  
+  .textarea-details {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .submit-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .success-message {
+    display: none;
+    color: green;
+    margin-top: 10px;
+  }
+  .receipt-form {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50%; /* Set the form width */
+    margin: 0 auto; /* Center the form horizontally */
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .select-customer,
+  .select-payment-method,
+  .input-date,
+  .new-customer-number,
+  .new-customer-name,
+  .textarea-details {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+  }
+  
+  .submit-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .success-message {
+    display: none;
+    color: green;
+    margin-top: 10px;
+  }
+  

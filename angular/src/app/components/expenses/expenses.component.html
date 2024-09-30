@@ -1,31 +1,34 @@
-
-<form [formGroup]="expenseForm" (ngSubmit)="saveExpenses()">
+<div dir="rtl" >
+<form [formGroup]="expenseForm" (ngSubmit)="saveExpenses()" class="receipt-form">
     <div class="form-group">
-        <label for="date">Date:</label>
+        <!-- <label for="date">תאריך:</label> -->
         <input type="date" formControlName="date">
     </div>
-  
+    <br>
     <div class="form-group">
-        <label for="paymentMethod">Payment Method:</label>
+       
         <select formControlName="paymentMethods">  
+            <option value="" disabled selected hidden>בחר  אמצעי תשלום</option>
             <option value="credit-card">אשראי</option>
             <option value="cash">מזומן</option>
             <option value="check">צק</option>
         </select>
     </div>
+    <br>
+    <div class="form-group">
+       
+        <input type="number" placeholder="סכום" formControlName="newCustomerNum" class="new-customer-number">
+    </div>
+    <br>
+    <div class="form-group">
+        <input type="number" placeholder="ספק" formControlName="newCustomerNum" class="new-customer-number">
+    </div>
+    <br>
+    <div class="form-group">
+        <textarea formControlName="details" placeholder="פרוט:" class="textarea-details"></textarea>
+       
+    </div>
   
-    <div class="form-group">
-        <label for="amount">Amount:</label>
-        <input type="number" formControlName="amount">
-    </div>
-    <div class="form-group">
-        <label for="provider">Provider</label>
-        <input type="text" formControlName="provider">
-    </div>
-    <div class="form-group">
-        <label for="details">Details:</label>
-        <textarea formControlName="details"></textarea>
-    </div>
-  
-    <button type="submit">Save</button>
-</form>
+    <button type="submit">שמירה</button>
+</form> 
+</div>

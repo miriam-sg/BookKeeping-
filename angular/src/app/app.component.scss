@@ -1,0 +1,83 @@
+.navbar {
+  // background-color: #007bff;; /* Set the background color of the navbar */
+  padding: 10px; /* Add padding to the navbar */
+}
+
+.nav {
+  list-style-type: none; /* Remove default list styles */
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  display: inline; /* Display list items horizontally */
+}
+
+.nav a {
+  color: rgb(255, 255, 255); /* Set text color to white */
+  text-decoration: none; /* Remove underline from links */
+  padding: 10px; /* Add padding to links */
+}
+
+.nav a:hover {
+  background-color:  #007bff;
+  color: #fff; /* Change background color on hover */
+}
+
+.active {
+  font-weight: bold; /* Highlight active link */
+}
+.navbar {
+  // background-color: #333;
+  color: #ffffff;
+  padding: 10px;
+}
+
+.nav {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.nav li {
+  margin: 0 10px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+.navbar {
+  background-color: #dedada;
+  color: #fff;
+  padding: 10px;
+}
+
+.nav {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.nav li {
+  margin: 0 10px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer {
+  background-color: #583f3f;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
