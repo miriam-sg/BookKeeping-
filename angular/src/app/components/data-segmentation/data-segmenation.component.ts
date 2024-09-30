@@ -38,6 +38,9 @@ export class DataSegmenationComponent {
   getByYear() {
     const value = (this.value.target as HTMLInputElement).value
     const year = parseInt(value)
+
+    this.flagDisplay = false; 
+
     if (this.flagExpense) {
       this.dataService.getExpenseByYear(year).subscribe((response) => {
         this.expense = response;
@@ -55,6 +58,9 @@ export class DataSegmenationComponent {
   getByMonth() {
     const value = (this.value.target as HTMLInputElement).value
     const month = parseInt(value)
+
+    this.flagDisplay = false; 
+
     if (this.flagExpense) {
       this.dataService.getExpenseByMonth(month).subscribe((response) => {
         this.expense = response;
@@ -62,6 +68,7 @@ export class DataSegmenationComponent {
         this.flagDisplay = true;
       })
     }
+    
     if (this.flagRevenue) {
       this.dataService.getReceiptByMonth(month).subscribe((response) => {
         this.revenue = response
@@ -73,6 +80,8 @@ export class DataSegmenationComponent {
     this.startDate = (this.startDate.target as HTMLInputElement).value
     this.endDate = (this.endDate.target as HTMLInputElement).value
 
+    this.flagDisplay = false; 
+
     if (this.flagExpense) {
       this.dataService.getExpenseBy2date(new Date(this.startDate), new Date(this.endDate)).subscribe((response) => {
         this.expense = response;
@@ -80,6 +89,7 @@ export class DataSegmenationComponent {
         this.flagDisplay = true;
       });
     }
+
     if (this.flagRevenue) {
       this.dataService.getReceiptBy2date(this.startDate, this.endDate).subscribe((response) => {
         this.revenue = response;

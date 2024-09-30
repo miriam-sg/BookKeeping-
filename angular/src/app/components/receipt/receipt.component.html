@@ -6,17 +6,22 @@
        
         <select (change)="onSelectChange($event)" class="select-customer">
             <option value=""> בחר  לקוח </option>
-            <option value="newCustomer"> לקוח חדש</option>
+            <option value="newCustomer" class="receipt-form"> לקוח חדש</option>
             <option *ngFor="let customer of customers" [value]="customer.name">{{ customer.name }}</option>
+
         </select>
-        <div *ngIf="flagnew" class="new-customer-section">
-            <input type="text" placeholder=" שם לקוח חדש  " (input)="updateNewCustomerName($event)">
-            <input type="number" placeholder="   הזן מספר לקוח חדש" (input)="updateNewCustomerNum($event)">
-            <input type="button" (click)="saveCustomer()" value=" שמור לקוח">
+        <div *ngIf="flagnew" >
+        
+        
+            <input type="text" placeholder=" שם לקוח חדש  " (input)="updateNewCustomerName($event)" class="submit">
+            <br><br>
+            <input type="number" placeholder="   הזן מספר לקוח חדש" (input)="updateNewCustomerNum($event)" class="submit">
+            <br><br>
+            <input type="button" (click)="saveCustomer()" value=" שמור לקוח" class="submit-btn">
         </div>
     </div>
     <div class="form-group">
-        <!-- <label for="date">תאריך:</label> -->
+       
         <input type="date" formControlName="date" class="input-date">
     </div>
     <div class="form-group">
@@ -38,3 +43,5 @@
     <div id="successMessage" class="success-message">הנתונים נשמרו בהצלחה</div>
 </form>
 </div>
+
+

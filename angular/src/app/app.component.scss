@@ -1,34 +1,34 @@
 .navbar {
-  // background-color: #007bff;; /* Set the background color of the navbar */
-  padding: 10px; /* Add padding to the navbar */
+
+  padding: 10px; 
 }
 
 .nav {
-  list-style-type: none; /* Remove default list styles */
+  list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
 .nav li {
-  display: inline; /* Display list items horizontally */
+  display: inline; 
 }
 
 .nav a {
-  color: rgb(255, 255, 255); /* Set text color to white */
-  text-decoration: none; /* Remove underline from links */
-  padding: 10px; /* Add padding to links */
+  color: rgb(255, 255, 255);
+  text-decoration: none; 
+  padding: 10px;
 }
 
 .nav a:hover {
   background-color:  #007bff;
-  color: #fff; /* Change background color on hover */
+  color: #fff; 
 }
 
 .active {
-  font-weight: bold; /* Highlight active link */
+  font-weight: bold; 
 }
 .navbar {
-  // background-color: #333;
+  
   color: #ffffff;
   padding: 10px;
 }

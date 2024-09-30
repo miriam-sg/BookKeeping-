@@ -8,18 +8,18 @@ import { Observable } from 'rxjs';
 })
 
 export class DataService {
-  private customers: Customer[] = []; // Assuming you have a property to store customers
+  private customers: Customer[] = []; 
 
   private baseUrl = 'http://127.0.0.1:3000'
 
   constructor(private http: HttpClient) { }
 
   get AllReceipts(): Observable<Array<Receipt>> {
-    // ניתוב להבאת כל הקבלות
+
     return this.http.get<Array<Receipt>>(`${this.baseUrl}`);
   }
   get AllCustomers(): Observable<Array<Customer>> {
-    // ניתוב להבאת כל הלקוחות
+
     return this.http.get<Array<Customer>>(`${this.baseUrl}/customer/findCustomer`);
   }
   get lastNumber(): Observable<number> {

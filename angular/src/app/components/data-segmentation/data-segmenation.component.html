@@ -36,25 +36,27 @@
         </select>
     </div>
 
-    <div *ngIf="this.flagDisplay">
+    <div *ngIf="flagDisplay" class="receipts">
         <div *ngIf="flagExpense">
-            <div *ngFor="let e of this.expense.expense">
-                <div>amount:{{e.amount}}</div>
-                <div>date:{{e.date}}</div>
-                <div>details:{{e.details}}</div>
-                <div>paymentMethods:{{e.paymentMethods}}</div>
-                <div>provider:{{e.provider}}</div>
+            <div *ngFor="let e of this.expense.expense" class="receipt-item">
+                <div class="amount">סכום:{{e.amount}}</div>
+                <div class="date">תאריך:{{e.date}}</div>
+                <div class="details">פירוט:{{e.details}}</div>
+                <div class="payment-methods">אמצעי תשלום:{{e.paymentMethods}}</div>
+                <div class="provider">ספק:{{e.provider}}</div>
             </div>
         </div>
-
+    
         <div *ngIf="flagRevenue">
-            <div *ngFor="let e of this.revenue.Revenue">
-                <div>amount:{{e.amount}}</div>
-                <div>date:{{e.date}}</div>
-                <div>details:{{e.details}}</div>
-                <div>paymentMethods:{{e.paymentMethods}}</div>
-                <div>customer:{{e.name}}</div>
+            <div *ngFor="let e of this.revenue.Revenue" class="receipt-item">
+                <div class="amount">סכום:{{e.amount}}</div>
+                <div class="date">תאריך:{{e.date}}</div>
+                <div class="details">פירוט:{{e.details}}</div>
+                <div class="payment-methods">אמצעי תשלום:{{e.paymentMethods}}</div>
+                <div class="customer">לקוח:{{e.customer}}</div>
             </div>
         </div>
     </div>
+    
+ 
 </div>

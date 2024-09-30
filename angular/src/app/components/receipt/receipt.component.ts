@@ -33,7 +33,9 @@ export class ReceiptComponent implements OnInit {
       date: new FormControl('', [Validators.required]),
       details: new FormControl(''),
       description: new FormControl(''),
-    })
+      newCustomerNum: new FormControl('') 
+  })
+  
   }
   ngOnInit(): void {
     this.dataService.AllCustomers.subscribe((data: Customer[]) => {
@@ -57,10 +59,25 @@ export class ReceiptComponent implements OnInit {
       alert('Please fill in all required fields correctly.');
     }
   }
+
   onSelectChange(event: Event) {
     const selectedValue = (event.target as HTMLSelectElement).value;
     this.flagnew = selectedValue === 'newCustomer';
-  }
+    
+    const newCustomerSection = document.querySelector('.new-customer-section');
+    
+    if (newCustomerSection instanceof HTMLElement) {
+        if (this.flagnew) {
+            newCustomerSection.style.display = 'block';
+        } else {
+            newCustomerSection.style.display = 'none';
+        }
+    } else {
+        console.error('Element with class "new-customer-section" not found.');
+    }
+}
+
+
   updateNewCustomerName(event: Event) {
     this.newCustomer.name = (event.target as HTMLInputElement).value;
   }
